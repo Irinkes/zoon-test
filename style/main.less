@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+@import "mixin.less";
+@import "vars.less";
+
+
+.wrapper {
+  background: #ffffff;
+  padding: 28px 65px 0;
+
+  .notifications {
+      font-size: 0;
+      width: 100%;
+      &-item {
+        height: 85px;
+        border-radius: 4px;
+        background-color: indigo;
+        padding: 14px 15px 19px 25px;
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(25% - 15px);
+        box-sizing: border-box;
+        margin-right: 5px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @media (min-width: 481px) and (max-width: 1000px) {
+          display: block;
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+      &-text {
+        font-family: Roboto, Arial, sans-serif;
+        line-height: 1.4;
+        letter-spacing: normal;
+        color: #ffffff;
+        float: left;
+        width: 80%;
+      }
+      &-number {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      &-label {
+        font-size: 13px;
+        line-height: 1.54;
+      }
+
+      &-icon {
+        float: right;
+        width: 20%;
+        text-align: right;
+      }
+    //&-icon.all-reply-icon {
+    //  .top-icon-img(40px, 40px, @chat-icon-svg);
+    //}
+
+  }
+
+}
+
