@@ -1,13 +1,21 @@
 module.exports = function(grunt) {
     require('jit-grunt')(grunt);
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    "build/main.min.js": "js/main.js"
+                }
+            }
+        },
         uglify: {
-            // options: {
-            //     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            // },
             build: {
                 src: 'js/main.js',
                 dest: 'build/main.min.js'
@@ -42,7 +50,7 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'less']);
+    grunt.registerTask('default', ['babel', 'less']);
     grunt.registerTask('watch:less', ['less','watch']);
 
 
