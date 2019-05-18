@@ -23,6 +23,7 @@ module.exports = function(grunt) {
                 }
             }
         },
+
         less: {
             development: {
                 options: {
