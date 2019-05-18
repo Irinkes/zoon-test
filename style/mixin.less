@@ -9,3 +9,25 @@
 //  @-inline-svg-code: ~'data:image/svg+xml,@{-svg-code}';
 //  @-inline-svg-url: ~"url('@{-inline-svg-code}')";
 //}
+.setting(@bgrColor,@color, @border, @bgrUrl, @iconWidth, @iconHeight, @iconTop, @iconLeft) {
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: @bgrColor;
+  color: @color;
+  border: @border;
+  padding: 5px 10px 5px 24px;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: @iconTop;
+    left: @iconLeft;
+    background-image: url("@{bgrUrl}");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: @iconWidth;
+    height: @iconHeight;
+  }
+}
