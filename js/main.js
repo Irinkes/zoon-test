@@ -12,33 +12,18 @@
             if(currentPopover.style.display === 'none') {
                 currentPopover.style.display = 'block';
 
-                if(currentPopover.style.display === 'block') {
-
-                    document.addEventListener('click', function(event) {
-                        var isClickInside = currentPopover.contains(event.target);
-                        if (isClickInside) {
-                            console.log('You clicked inside');
-                        }
-                        else {
-                            console.log('You clicked outside');
-                            if(currentPopover.style.display === 'block') {
-                                console.log('switch to none');
-                                currentPopover.style.display = 'none';
-                            } else {
-                                console.log('switch to block');
-                            }
-
-                        }
-                    });
-                }
-
             } else  {
                 currentPopover.style.display = 'none';
             }
         }
     }
+
+    function hidePopup(e) {
+
+    }
     var content = document.querySelector('.content');
     content.addEventListener('click', switchCompany);
+    document.activeElement('click', hidePopup);
 
     /*Завернуть тут в функцию */
 
