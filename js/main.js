@@ -52,7 +52,4 @@
     document.addEventListener('click', hidePopup);
 
 
-
-
-
 }())
